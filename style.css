@@ -16,8 +16,9 @@ html {
 body {
   margin: 0;
   /* font-family: monoid; */
-  background-color: #edf6f9;
+  background-color: #ffffff;
   color: black;
+  cursor: url('sexycursor.png'), auto;
 }
 
 /* ========================= Header ============================== */
@@ -27,12 +28,13 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #E5E5E5;
+  background: #fefcfcb4;
   color: #000000;
   padding: 10px 20px;
   position: sticky;
   top: 0;
   z-index: 999;
+  box-shadow: 0 4px 9px rgba(0, 0, 0, 0.08);
 }
 
 /* If logo is a text */
@@ -55,7 +57,8 @@ nav a {
   color: #000000;
   text-decoration: none;
   margin-left: 20px;
-  font-family: "pasti";
+  font-family: Elure;
+  font-size: 17px;
   transition: color 0.3s;
 }
 
@@ -84,8 +87,11 @@ section {
   min-height: 600px;
 }
 .hero {
-  background: #ffffff;
-  font-size: 16px;
+  /* background: #ffffff; */
+  /* font-size: 16px; */
+  background-image: url(crushedpaper.jpeg);
+  background-size: cover;
+  background-position: center;
 }
 .about {
   background: #e5e7eb;
@@ -98,10 +104,6 @@ section {
 }
 .contact {
   background: #ffffff;
-}
-.stickers img {
-  height: 160px;
-  margin: 5px;
 }
 
 /* Mobile styles */
@@ -132,7 +134,7 @@ section {
     min-height: 700px;
   }
   .logo img {
-    height: 70px;
+    height: 60px;
   }
   html {
     scroll-padding-top: 125px;
