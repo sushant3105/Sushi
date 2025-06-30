@@ -63,6 +63,11 @@
   cursor: pointer;
 }
 
+.popup p{
+  text-align: center;
+  font-family: gloria;
+}
+
 @keyframes fadeIn {
   from { opacity: 0; transform: translate(-50%, -60%); }
   to { opacity: 1; transform: translate(-50%, -50%); }
