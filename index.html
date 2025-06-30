@@ -14,44 +14,73 @@
     //   window.addEventListener('load', () => {
     //   alert("Viewport size:\nWidth: " + window.innerWidth + "px\nHeight: " + window.innerHeight + "px");
     // });
+  window.addEventListener("DOMContentLoaded", () => {
+    const popup = document.getElementById("popup");
+    const mainContainer = document.querySelector(".main-container");
+
+    // Show popup and apply blur
+    popup.style.display = "block";
+    mainContainer.classList.add("blurred");
+
+    // Remove popup and blur on any document click
+    document.addEventListener("click", function () {
+      popup.style.display = "none";
+      mainContainer.classList.remove("blurred");
+    }, { once: true }); // once = prevents multiple triggers
+  });
+
+    // Remove the popup on any click
+    document.addEventListener("click", function () {
+      const popup = document.getElementById("popup");
+      if (popup) {
+        popup.style.display = "none";
+      }
+    });
   </script>
 
   <body>
-    <!-- Header File -->
-    <header>
-      <div class="logo">
-        <img src="image/logo.png" alt />
-      </div>
-      <div class="hamburger" onclick="toggleMenu()">☰</div>
-      <nav class="nav-links">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
+    <div id="popup" class="popup">
+      <img
+        src="stickers/Ride_Safe_Sticker-removebg-preview.png"
+        alt="Caution Engineer"
+      />
+    </div>
+    <div class="main-container">
+      <!-- POPUP -->
 
-    <!-- Sections -->
-    <section id="hero" class="hero">
-      <div class="hero-container">
-        <span>Who am i ?</span>
-        <h1 class="name">Sushant</h1>
-        <p>
-          Just your friendly neighborhood code sorcerer, aged 19, cooking up
-          scripts in Python, conjuring web spells with JavaScript, and breaking
-          into systems (ethically, of course) before my morning chai.
-        </p>
-        <img src="stickers/introvert.png" alt="">
-      </div>
-    </section>
+      <!-- Header File -->
+      <header>
+        <div class="logo">
+          <img src="image/logo.png" alt />
+          <!-- <a href="#hero">Sushant</a> -->
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <nav class="nav-links">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
 
-    <section id="about" class="about">About Me</section>
+      <!-- Sections -->
+      <section id="hero" class="hero">
+        <div class="hero-container">
+          <!-- <p>Just your average Code Sorcerer</p> -->
+          <img src="stickers/introvert.png" alt="" />
+        </div>
+      </section>
 
-    <section id="projects" class="projects">Projects</section>
+      <section id="about" class="about">About Me</section>
 
-    <section id="skills" class="skills">Skills ...</section>
+      <section id="projects" class="projects">Projects</section>
 
-    <section id="contact" class="contact">Contact</section>
-    <div class="fuck"></div>
+      <section id="skills" class="skills">Skills ...</section>
+
+      <section id="contact" class="contact">Contact
+        
+      </section>
+      <div class="fuck"></div>
+    </div>
   </body>
 </html>

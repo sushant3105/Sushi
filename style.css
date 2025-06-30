@@ -17,6 +17,58 @@
   src: url(fonts/GloriaHallelujah-Regular.ttf);
 }
 
+
+/* .blurred {
+  filter: blur(5px);
+  pointer-events: none;
+} */
+
+.main-container {
+  position: relative;
+}
+
+
+.blurred {
+  position: relative;
+  filter: blur(5px);
+  pointer-events: none;
+}
+
+.blurred::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.225); /* black tint */
+  z-index: 9998;
+  pointer-events: none;
+}
+
+
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: transparent;
+  z-index: 9999;
+  padding: 20px;
+  animation: fadeIn 0.5s ease;
+}
+
+.popup img {
+  max-width: 230px;
+  height: auto;
+  filter: drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.3));
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translate(-50%, -60%); }
+  to { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+
 /* ========================= Global Styles ======================== */
 
 * {
@@ -48,22 +100,24 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #fefcfcb4;
+  background: #fefcfc;
   color: #000000;
   padding: 10px 20px;
-  position: sticky;
+  /* position: sticky; */
+  /* position: relative; */
   top: 0;
   z-index: 999;
-  box-shadow: 0 4px 9px rgba(0, 0, 0, 0.08);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08);
 }
 
 /* If logo is a text */
 .logo a {
   font-size: 37px;
-  /* font-weight: bold; */
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-weight: bold;
+  font-family: 'pasti';
   text-decoration: none;
   color: #161a1d;
+  padding-top: 10px;
 }
 
 /* if log is a img */
@@ -113,12 +167,13 @@ section {
 }
 
 .hero {
-  background: #ffffff;
   /* background: #ffae13; */
   font-size: 16px;
-  /* background-image: url(crushedpaper.jpeg);
+  /* background-image: url(image/imageonline-co-noisedimage\ \(2\).png); */
   background-size: cover;
-  background-position: center; */
+  background-position: center;
+  /* color: white; */
+  /* border-top: 4px solid black; */
 }
 
 .about {
@@ -143,27 +198,30 @@ section {
 /* ************************* Individual ************************************* */
 /* HERO */
 
-.hero-container span{
-  font-family: courage;
-  font-size: 20px;
-}
-.hero-container .name{
+.hero-container .whoami{
   font-family: invisible;
-  font-size: 40px;
+  font-size: 20px;
+  margin-top: 80px;
+  margin-left: 50px;
+}
+.hero-container .hero-name{
+  font-family: courage;
+  font-size: 70px;
+  margin-top: 0px;
+  text-align: center;
+  font-weight: normal;
+  text-shadow: 1px 4px 8px rgba(0, 0, 0, 0.589);
 }
 .hero-container p{
   font-family: monospace;
-  font-size: 16px;
+  font-size: 18px;
+  /* margin-top: 30px; */
 
 }
 .hero-container img{
   height: 220px;
-  margin-top: -30px;
+  margin-top: -60px;
 }
-
-
-
-
 
 
 /* ========================================== MEdia Queries ============================================== */
@@ -198,7 +256,10 @@ section {
   .logo img {
     height: 60px;
   }
-
+  .hero{
+    background-position: center -546px;
+    background-repeat: no-repeat;
+  }
   html {
     scroll-padding-top: 125px;
     scroll-behavior: smooth;
