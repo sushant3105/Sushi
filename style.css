@@ -38,7 +38,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.225); /* black tint */
+  background: rgba(0, 0, 0, 0.149); /* black tint */
   z-index: 9998;
   pointer-events: none;
 }
